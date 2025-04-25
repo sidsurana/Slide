@@ -1,0 +1,121 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Manrope:wght@200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Base Colors */
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  
+  /* Brand Colors */
+  --primary: 16 90% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 32 95% 60%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 220 70% 60%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  
+  /* UI Elements */
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.75rem;
+}
+
+.dark {
+  /* Dark Mode Colors */
+  --background: 231 15% 5%;
+  --foreground: 210 30% 98%;
+  --muted: 232 14% 12%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 231 15% 5%;
+  --popover-foreground: 210 30% 98%;
+  --card: 232 14% 10%;
+  --card-foreground: 210 30% 98%;
+  --border: 232 14% 14%;
+  --input: 232 14% 14%;
+  
+  /* Brand Colors in Dark Mode */
+  --primary: 16 85% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 32 90% 60%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 220 65% 60%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  
+  /* UI Elements in Dark Mode */
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-family: "Manrope", system-ui, sans-serif;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-bold;
+    font-family: "Outfit", system-ui, sans-serif;
+  }
+
+  h1 {
+    @apply text-4xl font-extrabold md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl font-bold md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl font-bold md:text-3xl;
+  }
+
+  p {
+    @apply leading-7;
+  }
+
+  /* Links and interactive elements */
+  a:not(.button) {
+    @apply text-primary hover:text-primary/90 transition-colors;
+  }
+
+  /* Form elements */
+  input, textarea, select {
+    @apply text-base;
+  }
+}
+
+.swipe-card {
+  transition: transform 0.3s ease-out;
+}
+
+.swipe-card.swipe-left {
+  transform: translateX(-150%) rotate(-20deg);
+}
+
+.swipe-card.swipe-right {
+  transform: translateX(150%) rotate(20deg);
+}
+
+.tab-indicator {
+  transition: transform 0.3s ease;
+}
